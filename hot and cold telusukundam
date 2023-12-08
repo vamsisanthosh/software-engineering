@@ -1,0 +1,33 @@
+def temperature_modeling(a, b, c, time):
+    temperature = a * time**2 + b * time + c
+    return temperature
+    
+#hardcoding values
+a_hard, b_hard, c_hard= 0.1, 2, 10
+print("Hard-coded Variables for Weather Modeling")
+time_hard= 5
+print("Temperature for hardcoded coefficients at time", temperature_modeling(a_hard, b_hard, c_hard, time_hard))
+print("\n")
+
+#taking keyboard input 
+print("taking keyboard input")
+a=float(input("enter the coeff of a"))
+b=float(input("enter the coeff of b"
+))
+c=float(input("enter the coeff of c"))
+time=float(input("enter the time for calculation"))
+print("temperature for keyboard inputs",temperature_modeling(a,b,c,time))
+
+#taking single line input from the files
+print("\ntaking input from files")
+f=open("file1.txt")
+inputs=f.readline()
+a,b,c,time=map(float,inputs.split())
+print("temperature for inputs through the file",temperature_modeling(a,b,c,time))
+
+#taking multiple inputs through file
+print("\ntaking multiple input from files")
+f=open("file2.txt")
+for line in f.read().split("\n"):
+    a,b,c,time=map(float,line.split())
+    print("temperature for multiple inputs",temperature_modeling(a,b,c,time))
